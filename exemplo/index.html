@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="libs/bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="libs/node_modules/angular/angular.js"></script>
+    <link rel="stylesheet" href="libs/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <script type="text/javascript" src="libs/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <link href="libs/typeahead/css/app.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/controller.js"></script>
+    <script type="text/javascript" src="libs/typeahead/js/typeahead.js"></script>
+    <title>Typeahead</title>
+</head>
+<body>
+<div class="jumbotron vertical-center" ng-controller="indexController">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 text-center">
+                <form>
+                    <div class="controls">
+                        <autocomplete items="items" model="name" title="name" subtitle="abbreviation" image="image" url="states.json" on-select="onItemSelected()" />
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
