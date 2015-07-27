@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<input type="text" class="form-control" ng-model="model" ng-keydown="disparaBusca($event)">
 
-</body>
-</html>
+<div class="items" ng-hide="!model.length || selected">
+    <div class="item" ng-repeat="item in items | filter:model  track by $index" ng-click="handleSelection(item[title])" ng-class="{'ativo':isCurrent($index)}" ng-mouseenter="setCurrent($index)">
+        <div class="row">
+            <div class="col-md-1">
+                    <img class="img-rounded"  style="width:75px; height: 70px;" src=item[image] onerror="this.src='images/user.png'">
+
+            </div>
+            <div class="col-md-6">
+                <h4>{{item[title]}}</h4>
+                <h6>{{item[subtitle]}}</h6>
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </div>
+</div>
